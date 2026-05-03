@@ -1,0 +1,29 @@
+defaults:
+  - base
+  - _self_
+
+seed: 2025
+
+command: 
+  - "/time set night"
+  - '/tp @s 175 77 860'
+
+task_conf:
+  - name: "mine"
+    text: "mine_block:coal_ore" 
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 1
+    reward: 1.0
+    objects: 
+      - "coal_ore"
+    identity: "mine coal_ore"
+
+init_inventory: 
+  - slot: 0
+    type: "iron_pickaxe"
+    quantity: 1
+  - slot: 1
+    type: "iron_shovel"
+    quantity: 1

@@ -1,0 +1,40 @@
+defaults:
+  - base
+  - _self_
+
+seed: 100
+
+command: 
+  # - "/time set night"
+  - '/tp @s -216 72 202'
+
+task_conf:
+  - name: "oak_log"
+    text: "mine_block:oak_log"
+    task_id: 12
+  - name: "charcoal"
+    text: "craft_item:charcoal" 
+    task_id: 17
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "oak_log"
+    identity: "mine oak_log"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "charcoal"
+    identity: "craft charcoal"
+
+init_inventory: 
+  - slot: 0
+    type: "stone_pickaxe"
+    quantity: 1
+
+  - slot: 1
+    type: "furnace"
+    quantity: 1

@@ -1,0 +1,50 @@
+defaults:
+  - base
+  - _self_
+
+command: 
+  - "/time set day"
+  
+task_conf:
+  - name: "sheep"
+    text: "kill_entity:sheep"
+    task_id: 11
+  - name: "cooked_mutton"
+    text: "craft_item:cooked_mutton" 
+    task_id: 17
+
+reward_conf:
+  - event: "kill_entity"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "sheep"
+    identity: "kill sheep"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "cooked_mutton"
+    identity: "craft cooked_mutton"
+
+mobs: 
+  - name: "sheep"
+    number: 1
+    range_x:  [-2, 2]
+    range_z:  [3, 10]
+
+init_inventory: 
+  - slot: 0
+    type: "diamond_sword"
+    quantity: 1
+
+  - slot: 1
+    type: "furnace"
+    quantity: 1
+
+  - slot: 2
+    type: "coal"
+    quantity: ">24"
+  - slot: "random"
+    type: "coal"
+    quantity: ">24"

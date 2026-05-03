@@ -1,0 +1,37 @@
+defaults:
+  - base
+  - _self_
+
+command: 
+  - "/time set night"
+
+task_conf:
+  - name: "cooked_mutton"
+    text: "craft_item:cooked_mutton" 
+
+reward_conf:
+  - event: "craft_item"
+    max_reward_times: 1
+    reward: 1.0
+    objects: 
+      - "cooked_mutton"
+    identity: "cooked_mutton"
+  
+init_inventory: 
+  - slot: 0
+    type: furnace
+    quantity: 1
+
+  - slot: "random"
+    type: coal
+    quantity: "10>="
+
+  - slot:  "random"
+    type: mutton
+    quantity: "10>="
+
+need_furnace: True
+need_gui: True
+
+worker:
+  "smelt"

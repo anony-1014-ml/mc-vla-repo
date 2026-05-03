@@ -1,0 +1,35 @@
+defaults:
+  - base
+  - _self_
+
+command: 
+  - "/time set night"
+
+task_conf:
+  - name: "furnace"
+    text: "craft_item:furnace" 
+
+reward_conf:
+  - event: "craft_item"
+    max_reward_times: 1
+    reward: 1.0
+    objects: 
+      - "furnace"
+    identity: "craft furnace"
+  
+init_inventory: 
+  - slot: 0
+    type: crafting_table
+    quantity: 1
+
+  - slot: "random"
+    type: "cobblestone"
+    quantity: ">9"
+  - slot: "random"
+    type: "blackstone"
+    quantity: ">9"
+
+need_crafting_table: True
+need_gui: True
+
+inventory_distraction_level: "zero"

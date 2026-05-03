@@ -1,0 +1,11 @@
+coal_from_blasting
+diamond_from_blasting
+emerald_from_blasting
+gold_ingot_from_blasting
+gold_nugget_from_blasting
+iron_ingot_from_blasting
+iron_nugget_from_blasting
+lapis_from_blasting
+netherite_scrap_from_blasting
+quartz_from_blasting
+redstone_from_blasting

@@ -1,0 +1,31 @@
+defaults:
+  - base
+  - _self_
+
+seed: 100
+
+command: 
+  # - "/time set night"
+  - '/tp @s -216 72 202'
+
+task_conf:
+  - name: "oak_log"
+    text: "mine_block:oak_log"
+    task_id: 12
+  - name: "crafting_table"
+    text: "craft_item:crafting_table" 
+    task_id: 17
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "oak_log"
+    identity: "mine oak_log"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "crafting_table"
+    identity: "craft crafting_table"

@@ -1,0 +1,9 @@
+baked_potato_from_smoking
+cooked_beef_from_smoking
+cooked_chicken_from_smoking
+cooked_cod_from_smoking
+cooked_mutton_from_smoking
+cooked_porkchop_from_smoking
+cooked_rabbit_from_smoking
+cooked_salmon_from_smoking
+dried_kelp_from_smoking

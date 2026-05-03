@@ -1,0 +1,50 @@
+defaults:
+  - base
+  - _self_
+
+seed: 100
+
+command: 
+  # - "/time set night"
+  - '/tp @s -216 72 202'
+
+task_conf:
+  - name: "oak_planks"
+    text: "craft_item:oak_planks" 
+    task_id: 17
+  - name: "white_bed"
+    text: "craft_item:white_bed" 
+    task_id: 17
+
+reward_conf:
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "oak_planks"
+    identity: "craft oak_planks"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "white_bed"
+    identity: "craft white_bed"
+
+init_inventory: 
+  - slot: 0
+    type: "crafting_table"
+    quantity: 1
+
+  - slot: 1
+    type: "oak_log"
+    quantity: ">24"
+  - slot: "random"
+    type: "oak_log"
+    quantity: ">24"
+
+  - slot: 2
+    type: "white_wool"
+    quantity: ">24"
+  - slot: "random"
+    type: "white_wool"
+    quantity: ">24"

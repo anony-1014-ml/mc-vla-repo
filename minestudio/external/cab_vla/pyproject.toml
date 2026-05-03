@@ -1,0 +1,109 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cab"
+description = "Completion at the Boundary (CaB)"
+version = "1.0.0"
+readme = "README.md"
+requires-python = ">=3.8"
+keywords = ["vision-language models", "multimodal pretraining", "machine learning"]
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    ## common ##
+    "av==13.1.0",
+    "lmdb",
+    "msgpack",
+    "msgpack-numpy",
+    "numpy==1.26.4",
+    "opencv-python==4.10.0.82",
+    "opencv-python-headless==4.10.0.82",
+    "scipy",
+    "scikit-learn",
+    "tensorboard",
+    "torchcodec==0.3.0",
+    ## prismatic-vlms ##
+    "accelerate>=0.25.0",
+    "draccus",
+    "einops",
+    # "flash_attn==2.7.3",  # -- install *AFTER* editable install (follow README) # pip install flash-attn==2.7.3 --no-build-isolation
+    "gym==0.26.2",
+    "gymnasium==1.1.1",
+    "huggingface_hub",
+    "jsonlines",
+    "ninja",
+    "packaging",
+    "rich",
+    "sentencepiece",
+    "timm==0.9.10",
+    "torch==2.7.0",
+    "torchvision==0.22.0",
+    # "torchaudio==2.7.0",
+    "transformers==4.51.3",
+    "wandb",
+    "webdataset",
+    ## vlm-evaluation ##
+    "ascii_magic",    
+    "gradio",
+    "gradio_client",
+    "jinja2==3.0.3",
+    "mosaicml-streaming",
+    "openai",
+    "pycocotools",
+    "pydantic",    
+    "pymongo",
+    "scikit-image",
+    "spacy",#==3.7.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.2.0",
+    "gpustat",
+    "ipython",
+    "pre-commit",
+    "ruff>=0.2.2",
+]
+
+#[project.urls]
+#homepage = ""
+#repository = ""
+#documentation = ""
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["cache"]
+
+[tool.setuptools.package-data]
+"prismatic" = ["py.typed"]
+
+[tool.black]
+line-length = 121
+target-version = ["py38", "py39", "py310"]
+preview = true
+
+[tool.ruff]
+line-length = 121
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["A", "B", "E", "F", "I", "RUF", "W"]
+ignore = ["F722"]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401"]

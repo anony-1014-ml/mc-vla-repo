@@ -1,0 +1,50 @@
+defaults:
+  - base
+  - _self_
+
+seed: 100
+
+command: 
+  # - "/time set night"
+  - '/tp @s -216 72 202'
+
+task_conf:
+  - name: "stick"
+    text: "craft_item:stick" 
+    task_id: 17
+  - name: "torch"
+    text: "craft_item:torch" 
+    task_id: 17
+
+reward_conf:
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "stick"
+    identity: "craft stick"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "torch"
+    identity: "craft torch"
+
+init_inventory: 
+  # - slot: 0
+  #   type: "crafting_table"
+  #   quantity: 1
+
+  - slot: 1
+    type: "oak_planks"
+    quantity: ">24"
+  - slot: "random"
+    type: "oak_planks"
+    quantity: ">24"
+
+  - slot: 2
+    type: "coal"
+    quantity: ">24"
+  - slot: "random"
+    type: "coal"
+    quantity: ">24"

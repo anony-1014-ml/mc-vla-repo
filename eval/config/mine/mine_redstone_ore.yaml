@@ -1,0 +1,29 @@
+defaults:
+  - base
+  - _self_
+
+seed: 114514
+
+command: 
+  - "/time set night"
+  - '/tp @s -13 15 -98'
+
+task_conf:
+  - name: "mine"
+    text: "mine_block:redstone_ore" 
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 1
+    reward: 1.0
+    objects: 
+      - "redstone_ore"
+    identity: "mine redstone_ore"
+
+init_inventory: 
+  - slot: 0
+    type: "iron_pickaxe"
+    quantity: 1
+  - slot: 1
+    type: "iron_shovel"
+    quantity: 1

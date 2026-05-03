@@ -1,0 +1,47 @@
+defaults:
+  - base
+  - _self_
+
+seed: 2025
+
+command: 
+  # - "/time set night"
+  - '/tp @s 175 77 860'
+    
+task_conf:
+  - name: "coal"
+    text: "mine_block:coal_ore" 
+    task_id: 12
+  - name: "baked_potato"
+    text: "craft_item:baked_potato" 
+    task_id: 17
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "coal_ore"
+    identity: "mine coal_ore"    
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "baked_potato"
+    identity: "craft baked_potato"
+
+init_inventory: 
+  - slot: 0
+    type: "stone_pickaxe"
+    quantity: 1
+
+  - slot: 1
+    type: "furnace"
+    quantity: 1
+
+  - slot: 2
+    type: "potato"
+    quantity: ">24"
+  - slot: "random"
+    type: "potato"
+    quantity: ">24"

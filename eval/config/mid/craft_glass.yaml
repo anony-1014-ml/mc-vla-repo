@@ -1,0 +1,47 @@
+defaults:
+  - base
+  - _self_
+
+seed: 7972459931808049474
+
+command: 
+  - "/time set day"
+  # - '/tp @s -4638 64 -5148'
+    
+task_conf:
+  - name: "sand"
+    text: "mine_block:sand" 
+    task_id: 12
+  - name: "glass"
+    text: "craft_item:glass" 
+    task_id: 17
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "sand"
+    identity: "mine sand"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "glass"
+    identity: "craft glass"
+
+init_inventory: 
+  - slot: 0
+    type: "stone_pickaxe"
+    quantity: 1
+
+  - slot: 1
+    type: "furnace"
+    quantity: 1
+
+  - slot: 2
+    type: "coal"
+    quantity: ">24"
+  - slot: "random"
+    type: "coal"
+    quantity: ">24"

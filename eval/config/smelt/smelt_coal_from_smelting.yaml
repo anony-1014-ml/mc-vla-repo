@@ -1,0 +1,37 @@
+defaults:
+  - base
+  - _self_
+
+command: 
+  - "/time set night"
+
+task_conf:
+  - name: "coal_from_smelting"
+    text: "craft_item:coal" 
+
+reward_conf:
+  - event: "craft_item"
+    max_reward_times: 1
+    reward: 1.0
+    objects: 
+      - "coal"
+    identity: "coal"
+  
+init_inventory: 
+  - slot: 0
+    type: furnace
+    quantity: 1
+
+  - slot: "random"
+    type: coal
+    quantity: "10>="
+
+  - slot:  "random"
+    type: coal_ore
+    quantity: "10>="
+
+need_furnace: True
+need_gui: True
+
+worker:
+  "smelt"

@@ -1,0 +1,40 @@
+defaults:
+  - base
+  - _self_
+
+seed: 2025
+
+command: 
+  # - "/time set night"
+  - '/tp @s 175 77 860'
+  
+task_conf:
+  - name: "stone"
+    text: "mine_block:stone" 
+    task_id: 12
+  - name: "furnace"
+    text: "craft_item:furnace" 
+    task_id: 17
+
+reward_conf:
+  - event: "mine_block"
+    max_reward_times: 100
+    reward: 0.1
+    objects: 
+      - "stone"
+    identity: "mine stone"
+  - event: "craft_item"
+    max_reward_times: 100
+    reward: 1.0
+    objects: 
+      - "furnace"
+    identity: "craft furnace"
+
+init_inventory: 
+  - slot: 0
+    type: "wooden_pickaxe"
+    quantity: 1
+
+  - slot: 1
+    type: "crafting_table"
+    quantity: 1
